@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@font-face{
+    font-family: count;
+    src: url(../Fonts/DS-DIGIB.TTF);
+}
 
 *{
     padding: 0;
@@ -32,6 +36,10 @@ nav{
 }
 nav svg{
     width: 50px;
+    filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
+}
+nav h1{
+    filter: drop-shadow(2px 2px 1px rgb(252, 252, 252));
 }
 .div{
     width: 100%;
@@ -51,10 +59,10 @@ button{
     color: antiquewhite;
 }
 .count{
-    font-family: Orbitron;
+    font-family: count;
     text-align: center;
     color: rgb(165, 165, 99);
-    font-size: 4rem;
+    font-size: 7.5rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -70,6 +78,16 @@ button{
     width: 300px;
     height: 12rem;
     padding: 0 .3rem;
+}
+.btn{
+    box-shadow: 2px 2px 2px 0 rgb(120, 195, 238);
+}
+.btn.push{
+    box-shadow: none;
+    translate: 2px 2px;
+}
+.sumrest.scale{
+    transform: scale(.9);
 }
 .panel__start{
    width: 100%;
@@ -140,15 +158,18 @@ button{
 .btn:hover{
     cursor: pointer;
 }
+.sumrest:hover{
+    cursor: pointer;
+}
 footer{
     text-align: center;
-    color: whitesmoke;
+    color: rgb(209, 207, 207);
     background-color: rgba(0, 0, 0, 0.658);
     height: 10vh;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: .7rem;
+    font-size: .6rem;
     font-weight: 400;
 }
