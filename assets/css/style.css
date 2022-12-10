@@ -44,10 +44,11 @@ nav svg{
     justify-content: center;
     align-items: center;
     height: 77vh;
-    padding-top: 5rem;
+    padding-top: 4rem;
 }
 button{
     border-radius: 6px;
+    color: antiquewhite;
 }
 .count{
     font-family: Orbitron;
@@ -65,26 +66,79 @@ button{
 .panel{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 300px;
+    height: 12rem;
     padding: 0 .3rem;
 }
 .panel__start{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 2.3fr;
-    gap: .3rem;
-    height: 42px;
-    margin-bottom: .5rem;
+   width: 100%;
+   height: 3rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 2.2fr;
+}
+.two{
+    background-color: blue;
+}
+.five{
+    background-color: rgb(3, 118, 250);
+}
+.ten{
+    background-color: rgb(47, 139, 245);
+}
+.fifteen{
+    background-color: rgb(130, 180, 238);
+}
+.start{
+    background-color: rgb(56, 150, 84);
+    font-size: 1rem;
+}
+.stop{
+    background-color: rgb(230, 156, 19);
+    font-size: 1rem;
+}
+.reset{
+    background-color: rgb(209, 230, 19);
+    font-size: 1rem;
+    color: rgb(44, 43, 43);
 }
 .panel__edit{
     display: grid;
+    height: 3rem;
     grid-template-columns: 1fr 1fr 1fr;
     gap: .3rem;
     margin-bottom: 5rem;
+    position: relative;
+    height: 3rem;
 }
 .up{
-    width: 20px;
-    height: 10px;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    width: 3.8rem;
+    bottom: -2px;
+    left: 0;
+}
+.p_up{
+    color: white;
+    position: absolute;
+    bottom: 11px;
+    left: 22px;
+    font-size: .8rem;
+}
+.p_down{
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 13px;
+    font-size: .8rem;
+}
+.down{
+    position: absolute;
+    width: 3.8rem;
+    top: 3px;
+    left: 33px;
+}
+.btn:hover{
+    cursor: pointer;
 }
 footer{
     text-align: center;
