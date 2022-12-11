@@ -5,11 +5,12 @@ const countMinuts = document.getElementById("minutos")
 const countSeconds = document.getElementById('segundos')
 let minuts = 0;
 let seconds = 0;
+let intervalCounter;
 
 panelBtn.addEventListener("click", (e) =>{
     if(e.target.tagName === "BUTTON"){
         if(e.target.attributes.id.value == 'btn-start'){
-            setInterval(cargarSegundos, 1000)
+            intervalCounter = setInterval(cargarSegundos, 1000)
         };
         e.target.classList.add("push")
         setTimeout(() => {
@@ -43,26 +44,15 @@ panelBtn.addEventListener("click", (e) =>{
     }
 })
 
-// btnStart.addEventListener("click", () =>{
-//     btnStart.classList.add("push")
-//     setTimeout( () => {
-//         btnStart.classList.remove("push")
-//     }, 100)
-// })
-
-// cargarSegundos()
-
 function cargarSegundos(){
-    let txtsegundos;
-    if(seconds < 0){
-        seconds = 59
-    }
+    let displaySeconds;
+    if(seconds < 0) seconds = 3;
     if(seconds < 10){
-        txtsegundos = `0${seconds}`
+        displaySeconds = `0${seconds}`
     } else {
-        txtsegundos = seconds
+        displaySeconds = seconds
     }
-    document.getElementById("segundos").innerText = txtsegundos;
+    document.getElementById("segundos").innerText = displaySeconds;
     seconds--;
     cargarMinutos(seconds)
 }
@@ -76,14 +66,13 @@ function cargarMinutos(segundos){
             minuts--
         }, 500)
     } else if(segundos == -1 && minuts == 0){
-        //setTimeout(() => {
-            //minutos = 59
-        //}, 500)
+        alert('Se acabo el tiempo')
+        clearInterval(intervalCounter)
         return
     }
-    if(minuts<10){
+    if(minuts< 10 && minuts != 0){
         txtMinutos = `0${minuts}`
-    } else {
+    }else{
         txtMinutos = minuts
     }
     document.getElementById("minutos").innerText = txtMinutos;
