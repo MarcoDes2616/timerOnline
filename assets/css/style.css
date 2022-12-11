@@ -119,10 +119,12 @@ button{
 #btn-up{
     position: relative;
     bottom: -11px;
+    filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
 }
 #btn-down{
     position: relative;
     top: 2px;
+    filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
 }
 .btn.push{
     box-shadow: none;
