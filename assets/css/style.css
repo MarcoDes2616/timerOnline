@@ -20,7 +20,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 10vh;
     font-family: Nunito;
 }
 nav{
@@ -31,20 +31,25 @@ nav{
     align-items: center;
     padding: 0 2rem;
     gap: 1rem;
-    font-size: 1.7rem;
+    font-size: 1.1rem;
     color: rgb(59, 165, 214);
 }
 nav svg{
     width: 50px;
     filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
 }
-nav h1{
+h1{
     filter: drop-shadow(2px 2px 1px rgb(252, 252, 252));
+}
+h1 span{
+    font-family: count;
+    font-size: 2.5rem;
+    color: rgb(17, 17, 17);
 }
 .div{
     width: 100%;
     height: 3px;
-    background-image: linear-gradient(to right, blue, rgb(87, 173, 207));
+    background-image: linear-gradient(to right, rgb(29, 29, 252), rgb(87, 173, 207));
 }
 .contenedor_general{
     display: flex;
@@ -53,27 +58,46 @@ nav h1{
     align-items: center;
     height: 77vh;
     padding-top: 4rem;
+    position: relative;
 }
 button{
     border-radius: 6px;
     color: antiquewhite;
 }
+.cintillo{
+    display: flex;
+    font-family: count;
+    width: 370px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    bottom: -18px;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.692);
+}
+.cintillo p{
+    color: rgb(24, 14, 0);
+    font-size: 1.2rem;
+}
+.show{
+    animation: showBtn .7s infinite;
+}
 .count{
     font-family: count;
     text-align: center;
-    color: rgb(165, 165, 99);
-    font-size: 7.5rem;
+    color: rgb(238, 238, 79);
+    font-size: 9.5rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    width: 300px;
+    width: 400px;
 }
 .contain{
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 380px;
     justify-content: space-between;
 }
 .panel{
@@ -115,15 +139,18 @@ button{
     margin-left: 2px;
     background-color: rgb(56, 150, 84);
     font-size: 1rem;
+    font-family: count;
 }
 #btn-up{
     position: relative;
-    bottom: -11px;
+    bottom: -2px;
+    margin-right: 5px;
     filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
 }
 #btn-down{
     position: relative;
     top: 2px;
+    margin-right: 5px;
     filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
 }
 .btn.push{
@@ -140,7 +167,7 @@ button{
    grid-template-columns: 1fr 1fr 1fr 1fr 2.2fr;
 }
 .two{
-    background-color: blue;
+    background-color: rgb(20, 20, 248);
 }
 .five{
     background-color: rgb(3, 118, 250);
@@ -149,20 +176,20 @@ button{
     background-color: rgb(47, 139, 245);
 }
 .fifteen{
-    background-color: rgb(130, 180, 238);
+    background-color: rgb(95, 164, 243);
 }
 .stop{
     background-color: rgb(230, 156, 19);
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: count;
 }
 .reset{
-    background-color: rgb(209, 230, 19);
-    font-size: 1rem;
-    color: rgb(44, 43, 43);
+    background-color: rgb(250, 106, 70);
+    font-size: 1.5rem;
+    font-family: count;
+    font-weight: 600;
 }
-
-
-
 .btn:hover{
     cursor: pointer;
 }
@@ -180,4 +207,30 @@ footer{
     justify-content: center;
     font-size: .6rem;
     font-weight: 400;
+}
+@keyframes showBtn{
+    0%{
+        color: rgb(24, 14, 0);
+    }
+    25%{
+        color: rgb(70, 49, 18);
+    }
+    50%{
+        color: rgb(59, 40, 10);
+    }
+    75%{
+        color: rgb(88, 65, 29);
+    }
+    100%{
+        color: rgb(24, 14, 0);
+    }
+}
+
+@media screen and (min-width: 700px) {
+    h1{
+        font-size: 2.7rem;
+    }
+    h1 span{
+        font-size: 4rem;
+    }
 }

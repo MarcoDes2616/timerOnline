@@ -4,6 +4,14 @@ const btnStart = document.getElementById("btn_start")
 const countMinuts = document.getElementById("minutos")
 const countSeconds = document.getElementById('segundos')
 const soundAlert = document.getElementById("sound")
+const showStart = document.getElementById("c_start")
+const showReset = document.getElementById("c_reset")
+const masUno = document.getElementById("c_mas")
+const menosUno = document.getElementById("c_menos")
+const masDos = document.getElementById("c_dos")
+const masCinco = document.getElementById("c_cinco")
+const masDiez = document.getElementById("c_diez")
+const masQuince = document.getElementById("c_quince")
 const filename = 'alert'
 let minuts = 0;
 let seconds = 0;
@@ -17,9 +25,45 @@ panelBtn.addEventListener("click", (e) =>{
             e.target.classList.remove("push")
         }, 100)
     }
-
+    if(element && element== 'btn-start'){
+        showStart.classList.add("show")
+        setTimeout( () => {
+            showStart.classList.remove("show")
+        }, 700)
+    }
+    if(element && element== 'btn-reset'){
+        showReset.classList.add("show")
+        setTimeout( () => {
+            showReset.classList.remove("show")
+        }, 700)
+    }
+    if(element && element== 'btn-two'){
+        masDos.classList.add("show")
+        setTimeout( () => {
+            masDos.classList.remove("show")
+        }, 700)
+    }
+    if(element && element== 'btn-five'){
+        masCinco.classList.add("show")
+        setTimeout( () => {
+            masCinco.classList.remove("show")
+        }, 700)
+    }
+    if(element && element== 'btn-ten'){
+        masDiez.classList.add("show")
+        setTimeout( () => {
+            masDiez.classList.remove("show")
+        }, 700)
+    }
+    if(element && element== 'btn-fifteen'){
+        masQuince.classList.add("show")
+        setTimeout( () => {
+            masQuince.classList.remove("show")
+        }, 700)
+    }
     if(element && element== 'btn-up'){
         e.target.classList.add("scale")
+        masUno.classList.add("show")
         minuts++
         if(minuts < 10){
             countMinuts.innerHTML= `0${minuts}`
@@ -29,8 +73,12 @@ panelBtn.addEventListener("click", (e) =>{
         setTimeout( () => {
             e.target.classList.remove("scale")
         }, 100)
+        setTimeout( () => {
+            masUno.classList.remove("show")
+        }, 700)
     } else if (element && element== 'btn-down') {
         e.target.classList.add("scale")
+        menosUno.classList.add("show")
         if(minuts > 0 && minuts < 10){
             minuts--
             countMinuts.innerHTML = `0${minuts}`
@@ -41,6 +89,9 @@ panelBtn.addEventListener("click", (e) =>{
         setTimeout(() => {
             e.target.classList.remove("scale")
         }, 100)
+        setTimeout( () => {
+            menosUno.classList.remove("show")
+        }, 700)
     }
     // console.log(element)
     switch(element){
@@ -136,3 +187,24 @@ const alertSound = (filename) => {
     let embedSource = `<embed hidden="true" autostart="true" loop="false" src="assets/sounds/${filename}.mp3">`;
     soundAlert.innerHTML = '<audio autoplay="autoplay">' + mp3Source + oggSource + embedSource + '</audio>';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+btnStart.addEventListener("click", () =>{
+    showStart.classList.add("show");
+    setTimeout(() => {
+        showStart.classList.remove("show")
+    }, 1000);
+})*/
