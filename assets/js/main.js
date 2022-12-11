@@ -52,7 +52,7 @@ panelBtn.addEventListener("click", (e) =>{
 
 function cargarSegundos(){
     let displaySeconds;
-    if(seconds < 0) seconds = 2;
+    if(seconds < 0) seconds = 59;
     if(seconds < 10){
         displaySeconds = `0${seconds}`
     } else {
@@ -72,7 +72,7 @@ function cargarMinutos(segundos){
             minuts--
         }, 500)
     } else if(segundos == -1 && minuts == 0){
-        alertSound()
+        alertSound(filename)
         alert('Se acabo el tiempo')
         clearInterval(intervalCounter)
         seconds = 0;
@@ -86,9 +86,9 @@ function cargarMinutos(segundos){
     document.getElementById("minutos").innerText = txtMinutos;
 }
 
-const alertSound = () => {
-    var mp3Source = `<source src="assets/sounds/alert.mp3" type="audio/mpeg">`;
-    var oggSource = `<source src="assets/sounds/alert.ogg" type="audio/ogg">`;
-    var embedSource = `<embed hidden="true" autostart="true" loop="false" src="assets/sounds/alert.mp3">`;
+const alertSound = (filename) => {
+    var mp3Source = `<source src="assets/sounds/${filename}.mp3" type="audio/mpeg">`;
+    var oggSource = `<source src="assets/sounds/${filename}.ogg" type="audio/ogg">`;
+    var embedSource = `<embed hidden="true" autostart="true" loop="false" src="assets/sounds/${filename}.mp3">`;
     soundAlert.innerHTML = '<audio autoplay="autoplay">' + mp3Source + oggSource + embedSource + '</audio>';
 }
