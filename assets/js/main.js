@@ -1,147 +1,90 @@
-const btnTwo = document.getElementById("btn_two")
-
-const btnFive = document.getElementById("btn_five")
-
-const btnTen = document.getElementById("btn_ten")
-
-const btnFifteen = document.getElementById("btn_fifteen")
-
-const btnStart = document.getElementById("btn_start")
-
-const btnUp = document.getElementById("btn_up")
-
-const btnDown = document.getElementById("btn_down")
-
-const btnStop = document.getElementById("btn_stop")
-
-const btnReset = document.getElementById("btn_reset")
-
-const countMinuts = document.getElementById("minutos")
-
+// Contenedor de los botones
 const panelBtn = document.getElementById("panel")
+const btnStart = document.getElementById("btn_start")
+const countMinuts = document.getElementById("minutos")
+const countSeconds = document.getElementById('segundos')
+let minuts = 0;
+let seconds = 0;
 
-let minutos
-
-//panelBtn.addEventListener("click", (e) =>{
-   // if(e.target.name === "buttom")
-//})
-
-
-btnTwo.addEventListener("click", () =>{
-    countMinuts.innerText = 02
-    btnTwo.classList.add("push")
-    setTimeout( () => {
-        btnTwo.classList.remove("push")
-    }, 100)
-})
-
-btnFive.addEventListener("click", () =>{
-    countMinuts.innerText = 05
-    btnFive.classList.add("push")
-    setTimeout( () => {
-        btnFive.classList.remove("push")
-    }, 100)
-})
-
-btnTen.addEventListener("click", () =>{
-    countMinuts.innerText = 10
-    btnTen.classList.add("push")
-    setTimeout( () => {
-        btnTen.classList.remove("push")
-    }, 100)
-})
-
-btnFifteen.addEventListener("click", () =>{
-    countMinuts.innerText = 15
-    btnFifteen.classList.add("push")
-    setTimeout( () => {
-        btnFifteen.classList.remove("push")
-    }, 100)
-})
-
-
-
-btnStop.addEventListener("click", () =>{
-    //countMinuts.innerText = ""
-    btnStop.classList.add("push")
-    setTimeout( () => {
-        btnStop.classList.remove("push")
-    }, 100)
-})
-
-btnReset.addEventListener("click", () =>{
-    btnReset.classList.add("push")
-    setTimeout( () => {
-        btnReset.classList.remove("push")
-    }, 100)
-})
-
-btnUp.addEventListener("click", () =>{
-    countMinuts.innerText++
-    btnUp.classList.add("scale")
-    setTimeout( () => {
-        btnUp.classList.remove("scale")
-    }, 100)
-})
-
-btnDown.addEventListener("click", () =>{
-    if(countMinuts.innerText >= 1){
-        countMinuts.innerText--
+panelBtn.addEventListener("click", (e) =>{
+    if(e.target.tagName === "BUTTON"){
+        if(e.target.attributes.id.value == 'btn-start'){
+            setInterval(cargarSegundos, 1000)
+        };
+        e.target.classList.add("push")
+        setTimeout(() => {
+            e.target.classList.remove("push")
+        }, 100)
     }
-    btnDown.classList.add("scale")
-    setTimeout( () => {
-        btnDown.classList.remove("scale")
-    }, 100)
+
+    if(e.target.attributes.id && e.target.attributes.id.value == 'btn-up'){
+        e.target.classList.add("scale")
+        minuts++
+        if(minuts < 10){
+            countMinuts.innerHTML= `0${minuts}`
+        }else{
+            countMinuts.innerHTML = `${minuts}`
+        }
+        setTimeout( () => {
+            e.target.classList.remove("scale")
+        }, 100)
+    } else if (e.target.attributes.id && e.target.attributes.id.value == 'btn-down') {
+        e.target.classList.add("scale")
+        if(minuts > 0 && minuts < 10){
+            minuts--
+            countMinuts.innerHTML = `0${minuts}`
+        }else{
+            minuts--
+            countMinuts.innerHTML = `${minuts}`
+        }
+        setTimeout(() => {
+            e.target.classList.remove("scale")
+        }, 100)
+    }
 })
 
-let segundos = 0
-minutos = 10
+// btnStart.addEventListener("click", () =>{
+//     btnStart.classList.add("push")
+//     setTimeout( () => {
+//         btnStart.classList.remove("push")
+//     }, 100)
+// })
 
-btnStart.addEventListener("click", () =>{
-    
-    cargarSegundos()
-    btnStart.classList.add("push")
-    setTimeout( () => {
-        btnStart.classList.remove("push")
-    }, 100)
-})
-
-cargarSegundos()
+// cargarSegundos()
 
 function cargarSegundos(){
     let txtsegundos;
-    if(segundos < 0){
-        segundos = 59
+    if(seconds < 0){
+        seconds = 59
     }
-    if(segundos < 10){
-        txtsegundos = `0${segundos}`
+    if(seconds < 10){
+        txtsegundos = `0${seconds}`
     } else {
-        txtsegundos = segundos
+        txtsegundos = seconds
     }
     document.getElementById("segundos").innerText = txtsegundos;
-    segundos--;
-
-    cargarMinutos(segundos)
+    seconds--;
+    cargarMinutos(seconds)
 }
 
-setInterval(cargarSegundos, 1000)
+
 
 function cargarMinutos(segundos){
     let txtMinutos;
-    if(segundos == -1 && minutos != 0){
+    if(segundos == -1 && minuts != 0){
         setTimeout(() => {
-            minutos--
+            minuts--
         }, 500)
-    } else if(segundos == -1 && minutos == 0){
+    } else if(segundos == -1 && minuts == 0){
         //setTimeout(() => {
             //minutos = 59
         //}, 500)
         return
     }
-    if(minutos<10){
-        txtMinutos = `0${minutos}`
+    if(minuts<10){
+        txtMinutos = `0${minuts}`
     } else {
-        txtMinutos = minutos
+        txtMinutos = minuts
     }
     document.getElementById("minutos").innerText = txtMinutos;
 }
