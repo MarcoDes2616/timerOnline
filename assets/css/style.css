@@ -89,8 +89,8 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    border-left: 1px solid rgb(87, 173, 207);
+    border-right: 1px solid rgb(87, 173, 207);
     width: 400px;
     background-color: rgba(0, 0, 0, 0.692);
 }
