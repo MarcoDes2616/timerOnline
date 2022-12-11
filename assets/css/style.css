@@ -73,7 +73,6 @@ button{
     position: relative;
     bottom: -18px;
     justify-content: space-evenly;
-    background-color: rgba(0, 0, 0, 0.692);
 }
 .cintillo p{
     color: rgb(24, 14, 0);
@@ -93,6 +92,7 @@ button{
     border-left: 1px solid white;
     border-right: 1px solid white;
     width: 400px;
+    background-color: rgba(0, 0, 0, 0.692);
 }
 .contain{
     display: flex;
