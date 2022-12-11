@@ -46,7 +46,7 @@ panelBtn.addEventListener("click", (e) =>{
 
 function cargarSegundos(){
     let displaySeconds;
-    if(seconds < 0) seconds = 3;
+    if(seconds < 0) seconds = 59;
     if(seconds < 10){
         displaySeconds = `0${seconds}`
     } else {
@@ -68,6 +68,7 @@ function cargarMinutos(segundos){
     } else if(segundos == -1 && minuts == 0){
         alert('Se acabo el tiempo')
         clearInterval(intervalCounter)
+        seconds = 0;
         return
     }
     if(minuts< 10 && minuts != 0){
