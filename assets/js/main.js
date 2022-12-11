@@ -131,8 +131,8 @@ function cargarMinutos(segundos){
 }
 
 const alertSound = (filename) => {
-    var mp3Source = `<source src="assets/sounds/${filename}.mp3" type="audio/mpeg">`;
-    var oggSource = `<source src="assets/sounds/${filename}.ogg" type="audio/ogg">`;
-    var embedSource = `<embed hidden="true" autostart="true" loop="false" src="assets/sounds/${filename}.mp3">`;
+    let mp3Source = `<source src="assets/sounds/${filename}.mp3" type="audio/mpeg">`;
+    let oggSource = `<source src="assets/sounds/${filename}.ogg" type="audio/ogg">`;
+    let embedSource = `<embed hidden="true" autostart="true" loop="false" src="assets/sounds/${filename}.mp3">`;
     soundAlert.innerHTML = '<audio autoplay="autoplay">' + mp3Source + oggSource + embedSource + '</audio>';
 }
