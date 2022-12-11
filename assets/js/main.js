@@ -129,6 +129,8 @@ panelBtn.addEventListener("click", (e) =>{
                 countMinuts.innerHTML = `${minuts}`
             }
             break;
+        case 'btn-stop':
+            clearInterval(intervalCounter);
     }
 
 })
@@ -139,14 +141,12 @@ function cargarSegundos(){
     if(seconds < 10){
         displaySeconds = `0${seconds}`
     } else {
-        displaySeconds = seconds
+        displaySeconds = `${seconds}`
     }
     countSeconds.innerText = displaySeconds;
     seconds--;
     cargarMinutos(seconds)
 }
-
-
 
 function cargarMinutos(segundos){
     let txtMinutos;
@@ -175,18 +175,6 @@ const alertSound = (filename) => {
     let embedSource = `<embed hidden="true" autostart="true" loop="false" src="assets/sounds/${filename}.mp3">`;
     soundAlert.innerHTML = '<audio autoplay="autoplay">' + mp3Source + oggSource + embedSource + '</audio>';
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 

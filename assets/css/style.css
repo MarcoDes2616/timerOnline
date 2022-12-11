@@ -96,6 +96,8 @@ button{
     justify-content: center;
     border-left: 1px solid #E5EBB2;
     border-right: 1px solid #E5EBB2;
+    border-left: 1px solid rgb(87, 173, 207);
+    border-right: 1px solid rgb(87, 173, 207);
     width: 400px;
     background-color: rgba(0, 0, 0, 0.692);
 }
