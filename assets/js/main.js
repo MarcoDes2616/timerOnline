@@ -10,7 +10,11 @@ let intervalCounter;
 panelBtn.addEventListener("click", (e) =>{
     if(e.target.tagName === "BUTTON"){
         if(e.target.attributes.id.value == 'btn-start'){
-            intervalCounter = setInterval(cargarSegundos, 1000)
+            if(minuts == 0){
+                alert('No has indicado el tiempo ')
+            }else{
+                intervalCounter = setInterval(cargarSegundos, 1000)
+            }
         };
         e.target.classList.add("push")
         setTimeout(() => {
