@@ -117,9 +117,9 @@ function cargarMinutos(segundos){
         }, 500)
     } else if(segundos == -1 && minuts == 0){
         alertSound(filename)
-        alert('Se acabo el tiempo')
         clearInterval(intervalCounter)
         seconds = 0;
+        alert('Se acabo el tiempo')
         return
     }
     if(minuts< 10 && minuts != 0){
