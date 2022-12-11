@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
 @font-face{
     font-family: count;
     src: url(../Fonts/DS-DIGIB.TTF);
@@ -13,6 +16,7 @@
 img{
     width: 100%;
 }
+
 body{
     background-image: url(../img/timer\ \ temporizador\ academlo.jpg);
     background-position: center;
@@ -32,24 +36,25 @@ nav{
     padding: 0 2rem;
     gap: 1rem;
     font-size: 1.1rem;
-    color: rgb(59, 165, 214);
+    color: #2F5972;
 }
 nav svg{
-    width: 50px;
+    width: 40px;
     filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
 }
 h1{
-    filter: drop-shadow(2px 2px 1px rgb(252, 252, 252));
+    /*filter: drop-shadow(2px 2px 1px rgb(252, 252, 252));*/
+    font-family: 'Poppins', sans-serif !important;
 }
 h1 span{
-    font-family: count;
-    font-size: 2.5rem;
-    color: rgb(17, 17, 17);
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1rem;
+    color: #A30052;
 }
 .div{
     width: 100%;
     height: 3px;
-    background-image: linear-gradient(to right, rgb(29, 29, 252), rgb(87, 173, 207));
+    background-image: linear-gradient(to right, #A30052, rgb(87, 173, 207));
 }
 .contenedor_general{
     display: flex;
@@ -84,11 +89,13 @@ button{
 .count{
     font-family: count;
     text-align: center;
-    color: rgb(238, 238, 79);
+    color: #FECF67;
     font-size: 9.5rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    border-left: 1px solid #E5EBB2;
+    border-right: 1px solid #E5EBB2;
     border-left: 1px solid rgb(87, 173, 207);
     border-right: 1px solid rgb(87, 173, 207);
     width: 400px;
@@ -130,28 +137,29 @@ button{
 }
 .btn{
     height: 3rem;
-    box-shadow: 2px 2px 2px 0 rgb(120, 195, 238);
+    box-shadow: 2px 2px 2px 0 #FECF67;
 }
 .start{
     width: 15%;
-    height: 90%;
+    height: 100%;
     align-self: center;
-    margin-left: 2px;
-    background-color: rgb(56, 150, 84);
-    font-size: 1rem;
+    margin-left: 10px;
+    background-color: #1C6758;
+    box-shadow: 2px 2px 2px 0 #C7F2A4;
+    font-size: 1.3rem;
     font-family: count;
 }
 #btn-up{
     position: relative;
     bottom: -2px;
     margin-right: 5px;
-    filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
+    filter: drop-shadow(0.5px 0.5px 0.5px #F8C4B4);
 }
 #btn-down{
     position: relative;
-    top: 2px;
+    top: -6px;
     margin-right: 5px;
-    filter: drop-shadow(2px 2px 1px rgb(129, 199, 247));
+    filter: drop-shadow(0.5px 0.5px 0.5px #F8C4B4);
 }
 .btn.push{
     box-shadow: none;
@@ -167,25 +175,37 @@ button{
     grid-template-columns: 1fr 1fr 1fr 1fr 2.2fr;
 }
 .two{
-    background-color: rgb(20, 20, 248);
+    background-color: #FFEADC;
+    color:  #7F167F;
+    box-shadow: 2px 2px 2px 0 #F8C4B4;
+    margin-right: 4px;
 }
 .five{
-    background-color: rgb(3, 118, 250);
+    background-color: #F56EB3;
+    box-shadow: 2px 2px 2px 0 #F8C4B4;
+    margin-right: 4px;
 }
 .ten{
-    background-color: rgb(47, 139, 245);
+    background-color: #CB1C8D;
+    box-shadow: 2px 2px 2px 0 #F8C4B4;
+    margin-right: 4px;
 }
 .fifteen{
-    background-color: rgb(95, 164, 243);
+    background-color: #7F167F;
+    color: #F8C4B4;
+    box-shadow: 2px 2px 2px 0 #F8C4B4;
 }
 .stop{
-    background-color: rgb(230, 156, 19);
+    background-color: #B73E3E;
+    box-shadow: 2px 2px 2px 0 #F7A4A4;
     font-size: 1.5rem;
     font-weight: 600;
     font-family: count;
+    margin-right: 4px;
 }
 .reset{
-    background-color: rgb(250, 106, 70);
+    background-color: #3E6D9C;
+    box-shadow: 2px 2px 2px 0 #F1F6F5;
     font-size: 1.5rem;
     font-family: count;
     font-weight: 600;
@@ -198,14 +218,14 @@ button{
 }
 footer{
     text-align: center;
-    color: rgb(209, 207, 207);
+    color: #E5EBB2;
     background-color: rgba(0, 0, 0, 0.658);
     height: 10vh;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: .6rem;
+    font-size: .5rem;
     font-weight: 400;
 }
 @keyframes showBtn{
@@ -229,8 +249,10 @@ footer{
 @media screen and (min-width: 700px) {
     h1{
         font-size: 2.7rem;
+        color: #A30052;
     }
     h1 span{
-        font-size: 4rem;
+        font-size: 2rem;
+        color: #2F5972;
     }
 }
