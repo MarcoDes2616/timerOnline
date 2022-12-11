@@ -161,10 +161,10 @@ button{
     transform: scale(.9);
 }
 .panel__start{
-   width: 100%;
-   height: 3rem;
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr 2.2fr;
+    width: 100%;
+    height: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2.2fr;
 }
 .two{
     background-color: rgb(20, 20, 248);

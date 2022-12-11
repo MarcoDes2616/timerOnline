@@ -1,6 +1,5 @@
 // Contenedor de los botones
 const panelBtn = document.getElementById("panel")
-const btnStart = document.getElementById("btn_start")
 const countMinuts = document.getElementById("minutos")
 const countSeconds = document.getElementById('segundos')
 const soundAlert = document.getElementById("sound")
@@ -25,42 +24,7 @@ panelBtn.addEventListener("click", (e) =>{
             e.target.classList.remove("push")
         }, 100)
     }
-    if(element && element== 'btn-start'){
-        showStart.classList.add("show")
-        setTimeout( () => {
-            showStart.classList.remove("show")
-        }, 700)
-    }
-    if(element && element== 'btn-reset'){
-        showReset.classList.add("show")
-        setTimeout( () => {
-            showReset.classList.remove("show")
-        }, 700)
-    }
-    if(element && element== 'btn-two'){
-        masDos.classList.add("show")
-        setTimeout( () => {
-            masDos.classList.remove("show")
-        }, 700)
-    }
-    if(element && element== 'btn-five'){
-        masCinco.classList.add("show")
-        setTimeout( () => {
-            masCinco.classList.remove("show")
-        }, 700)
-    }
-    if(element && element== 'btn-ten'){
-        masDiez.classList.add("show")
-        setTimeout( () => {
-            masDiez.classList.remove("show")
-        }, 700)
-    }
-    if(element && element== 'btn-fifteen'){
-        masQuince.classList.add("show")
-        setTimeout( () => {
-            masQuince.classList.remove("show")
-        }, 700)
-    }
+
     if(element && element== 'btn-up'){
         e.target.classList.add("scale")
         masUno.classList.add("show")
@@ -96,6 +60,10 @@ panelBtn.addEventListener("click", (e) =>{
     // console.log(element)
     switch(element){
         case 'btn-start':
+            showStart.classList.add("show")
+            setTimeout(() => {
+                showStart.classList.remove("show")
+            }, 700)
             if (minuts == 0) {
                 alert('No has indicado el tiempo ')
             } else {
@@ -103,6 +71,10 @@ panelBtn.addEventListener("click", (e) =>{
             }
             break
         case 'btn-reset':
+            showReset.classList.add("show")
+            setTimeout(() => {
+                showReset.classList.remove("show")
+            }, 700)
             clearInterval(intervalCounter)
             minuts = 0
             seconds = 0
@@ -110,6 +82,10 @@ panelBtn.addEventListener("click", (e) =>{
             countSeconds.innerHTML = `0${seconds}`
             break;
         case 'btn-two':
+            masDos.classList.add("show")
+            setTimeout(() => {
+                masDos.classList.remove("show")
+            }, 700)
             minuts += 2
             if(minuts < 10){
                 countMinuts.innerHTML = `0${minuts}`
@@ -118,6 +94,10 @@ panelBtn.addEventListener("click", (e) =>{
             }
             break;
         case 'btn-five':
+            masCinco.classList.add("show")
+            setTimeout(() => {
+                masCinco.classList.remove("show")
+            }, 700)
             minuts += 5
             if(minuts < 10){
                 countMinuts.innerHTML = `0${minuts}`
@@ -126,6 +106,10 @@ panelBtn.addEventListener("click", (e) =>{
             }
             break;
         case 'btn-ten':
+            masDiez.classList.add("show")
+            setTimeout(() => {
+                masDiez.classList.remove("show")
+            }, 700)
             minuts += 10
             if(minuts < 10){
                 countMinuts.innerHTML = `0${minuts}`
@@ -134,6 +118,10 @@ panelBtn.addEventListener("click", (e) =>{
             }
             break;
         case 'btn-fifteen':
+            masQuince.classList.add("show")
+            setTimeout(() => {
+                masQuince.classList.remove("show")
+            }, 700)
             minuts += 15
             if(minuts < 10){
                 countMinuts.innerHTML = `0${minuts}`
