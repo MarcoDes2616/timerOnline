@@ -69,18 +69,60 @@ button{
     border-left: 1px solid white;
     border-right: 1px solid white;
     width: 300px;
-    margin-bottom: 1rem;
+}
+.contain{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: space-between;
 }
 .panel{
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 7rem;
+    margin-bottom: 6rem;
+}
+.panel_div{
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 300px;
-    height: 12rem;
-    padding: 0 .3rem;
+    width: 85%;
+    justify-content: space-evenly;
+}
+.panel1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 3rem;
+    gap: 2px;
+}
+.panel2{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    width: 100%;
+    height: 3rem;
+    gap: 2px;
+    position: relative;
 }
 .btn{
+    height: 3rem;
     box-shadow: 2px 2px 2px 0 rgb(120, 195, 238);
+}
+.start{
+    width: 15%;
+    height: 90%;
+    align-self: center;
+    margin-left: 2px;
+    background-color: rgb(56, 150, 84);
+    font-size: 1rem;
+}
+#btn-up{
+    position: relative;
+    bottom: -11px;
+}
+#btn-down{
+    position: relative;
+    top: 2px;
 }
 .btn.push{
     box-shadow: none;
@@ -107,10 +149,6 @@ button{
 .fifteen{
     background-color: rgb(130, 180, 238);
 }
-.start{
-    background-color: rgb(56, 150, 84);
-    font-size: 1rem;
-}
 .stop{
     background-color: rgb(230, 156, 19);
     font-size: 1rem;
@@ -120,41 +158,9 @@ button{
     font-size: 1rem;
     color: rgb(44, 43, 43);
 }
-.panel__edit{
-    display: grid;
-    height: 3rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: .3rem;
-    margin-bottom: 5rem;
-    position: relative;
-    height: 3rem;
-}
-.up{
-    position: absolute;
-    width: 3.8rem;
-    bottom: -2px;
-    left: 0;
-}
-.p_up{
-    color: white;
-    position: absolute;
-    bottom: 11px;
-    left: 22px;
-    font-size: .8rem;
-}
-.p_down{
-    color: white;
-    position: absolute;
-    bottom: 20px;
-    left: 13px;
-    font-size: .8rem;
-}
-.down{
-    position: absolute;
-    width: 3.8rem;
-    top: 3px;
-    left: 33px;
-}
+
+
+
 .btn:hover{
     cursor: pointer;
 }
