@@ -48,6 +48,14 @@ panelBtn.addEventListener("click", (e) =>{
             e.target.classList.remove("scale")
         }, 100)
     }
+    if(e.target.attributes.id.value == 'btn-reset'){
+        clearInterval(intervalCounter)
+        minuts = 0
+        seconds= 0
+        countMinuts.innerHTML = `0${minuts}`
+        countSeconds.innerHTML= `0${seconds}`
+    }
+    console.log(e.target.attributes.id.value);
 })
 
 function cargarSegundos(){
@@ -58,7 +66,7 @@ function cargarSegundos(){
     } else {
         displaySeconds = seconds
     }
-    document.getElementById("segundos").innerText = displaySeconds;
+    countSeconds.innerText = displaySeconds;
     seconds--;
     cargarMinutos(seconds)
 }
@@ -83,7 +91,7 @@ function cargarMinutos(segundos){
     }else{
         txtMinutos = minuts
     }
-    document.getElementById("minutos").innerText = txtMinutos;
+    countMinuts.innerText = txtMinutos;
 }
 
 const alertSound = (filename) => {
