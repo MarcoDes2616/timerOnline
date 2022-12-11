@@ -33,7 +33,7 @@ panelBtn.addEventListener("click", (e) =>{
         if(minuts > 0 && minuts < 10){
             minuts--
             countMinuts.innerHTML = `0${minuts}`
-        }else{
+        } else if (minuts > 0 && minuts > 10){
             minuts--
             countMinuts.innerHTML = `${minuts}`
         }
