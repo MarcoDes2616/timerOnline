@@ -10,21 +10,15 @@ let seconds = 0;
 let intervalCounter;
 
 panelBtn.addEventListener("click", (e) =>{
+    let element = e.target.attributes.id.value;
     if(e.target.tagName === "BUTTON"){
-        if(e.target.attributes.id.value == 'btn-start'){
-            if(minuts == 0){
-                alert('No has indicado el tiempo ')
-            }else{
-                intervalCounter = setInterval(cargarSegundos, 1000)
-            }
-        };
         e.target.classList.add("push")
         setTimeout(() => {
             e.target.classList.remove("push")
         }, 100)
     }
 
-    if(e.target.attributes.id && e.target.attributes.id.value == 'btn-up'){
+    if(element && element== 'btn-up'){
         e.target.classList.add("scale")
         minuts++
         if(minuts < 10){
@@ -35,7 +29,7 @@ panelBtn.addEventListener("click", (e) =>{
         setTimeout( () => {
             e.target.classList.remove("scale")
         }, 100)
-    } else if (e.target.attributes.id && e.target.attributes.id.value == 'btn-down') {
+    } else if (element && element== 'btn-down') {
         e.target.classList.add("scale")
         if(minuts > 0 && minuts < 10){
             minuts--
@@ -48,14 +42,56 @@ panelBtn.addEventListener("click", (e) =>{
             e.target.classList.remove("scale")
         }, 100)
     }
-    if(e.target.attributes.id.value == 'btn-reset'){
-        clearInterval(intervalCounter)
-        minuts = 0
-        seconds= 0
-        countMinuts.innerHTML = `0${minuts}`
-        countSeconds.innerHTML= `0${seconds}`
+    // console.log(element)
+    switch(element){
+        case 'btn-start':
+            if (minuts == 0) {
+                alert('No has indicado el tiempo ')
+            } else {
+                intervalCounter = setInterval(cargarSegundos, 1000)
+            }
+            break
+        case 'btn-reset':
+            clearInterval(intervalCounter)
+            minuts = 0
+            seconds = 0
+            countMinuts.innerHTML = `0${minuts}`
+            countSeconds.innerHTML = `0${seconds}`
+            break;
+        case 'btn-two':
+            minuts += 2
+            if(minuts < 10){
+                countMinuts.innerHTML = `0${minuts}`
+            }else{
+                countMinuts.innerHTML = `${minuts}`
+            }
+            break;
+        case 'btn-five':
+            minuts += 5
+            if(minuts < 10){
+                countMinuts.innerHTML = `0${minuts}`
+            }else{
+                countMinuts.innerHTML = `${minuts}`
+            }
+            break;
+        case 'btn-ten':
+            minuts += 10
+            if(minuts < 10){
+                countMinuts.innerHTML = `0${minuts}`
+            }else{
+                countMinuts.innerHTML = `${minuts}`
+            }
+            break;
+        case 'btn-fifteen':
+            minuts += 15
+            if(minuts < 10){
+                countMinuts.innerHTML = `0${minuts}`
+            }else{
+                countMinuts.innerHTML = `${minuts}`
+            }
+            break;
     }
-    console.log(e.target.attributes.id.value);
+
 })
 
 function cargarSegundos(){
