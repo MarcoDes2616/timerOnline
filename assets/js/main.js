@@ -11,20 +11,22 @@ const masDos = document.getElementById("c_dos")
 const masCinco = document.getElementById("c_cinco")
 const masDiez = document.getElementById("c_diez")
 const masQuince = document.getElementById("c_quince")
-const filename = 'alert'
+const filename = 'cat-alert'
 let minuts = 0;
 let seconds = 0;
 let intervalCounter;
 
+// Detecta los eventos click en el panel de botones.
 panelBtn.addEventListener("click", (e) =>{
     let element = e.target.attributes.id.value;
+    // Agrega el efecto push a todos los botones.
     if(e.target.tagName === "BUTTON"){
         e.target.classList.add("push")
         setTimeout(() => {
             e.target.classList.remove("push")
         }, 100)
     }
-
+    // Incrementa o Decrementa el contador del timer.
     if(element && element== 'btn-up'){
         e.target.classList.add("scale")
         masUno.classList.add("show")
@@ -57,8 +59,9 @@ panelBtn.addEventListener("click", (e) =>{
             menosUno.classList.remove("show")
         }, 700)
     }
-    // console.log(element)
+    // Detecta que boton esta siendo presionado.
     switch(element){
+        // Detecta si se ha ingresado tiempo e inicia la el contador de asi serlo.
         case 'btn-start':
             showStart.classList.add("show")
             setTimeout(() => {
@@ -70,6 +73,7 @@ panelBtn.addEventListener("click", (e) =>{
                 intervalCounter = setInterval(cargarSegundos, 1000)
             }
             break
+        // Limpia detiene el contador y limpia el valor en las variables.
         case 'btn-reset':
             showReset.classList.add("show")
             setTimeout(() => {
@@ -81,6 +85,7 @@ panelBtn.addEventListener("click", (e) =>{
             countMinuts.innerHTML = `0${minuts}`
             countSeconds.innerHTML = `0${seconds}`
             break;
+        // Incrementa el tiempo del contador en 2.
         case 'btn-two':
             masDos.classList.add("show")
             setTimeout(() => {
@@ -93,6 +98,7 @@ panelBtn.addEventListener("click", (e) =>{
                 countMinuts.innerHTML = `${minuts}`
             }
             break;
+            // Incrementa el tiempo del contador en 5.
         case 'btn-five':
             masCinco.classList.add("show")
             setTimeout(() => {
@@ -105,6 +111,7 @@ panelBtn.addEventListener("click", (e) =>{
                 countMinuts.innerHTML = `${minuts}`
             }
             break;
+        // Incrementa el tiempo del contador en 10.
         case 'btn-ten':
             masDiez.classList.add("show")
             setTimeout(() => {
@@ -117,6 +124,7 @@ panelBtn.addEventListener("click", (e) =>{
                 countMinuts.innerHTML = `${minuts}`
             }
             break;
+        // Incrementa el tiempo del contador en 15.
         case 'btn-fifteen':
             masQuince.classList.add("show")
             setTimeout(() => {
@@ -129,15 +137,17 @@ panelBtn.addEventListener("click", (e) =>{
                 countMinuts.innerHTML = `${minuts}`
             }
             break;
+        // Detiene el cronometro hasta que se presione start de nuevo.
         case 'btn-stop':
             clearInterval(intervalCounter);
     }
-
 })
 
 function cargarSegundos(){
     let displaySeconds;
+    // Inicializa el contador de segundos en 59.
     if(seconds < 0) seconds = 59;
+    // en base al valor actual determina la forma en que se inserta el valor.
     if(seconds < 10){
         displaySeconds = `0${seconds}`
     } else {
@@ -169,6 +179,7 @@ function cargarMinutos(segundos){
     countMinuts.innerText = txtMinutos;
 }
 
+// Inserta y reproduce el audio de alerta al ser llamada.
 const alertSound = (filename) => {
     let mp3Source = `<source src="assets/sounds/${filename}.mp3" type="audio/mpeg">`;
     let oggSource = `<source src="assets/sounds/${filename}.ogg" type="audio/ogg">`;
@@ -177,7 +188,6 @@ const alertSound = (filename) => {
 }
 
 /*
-
 btnStart.addEventListener("click", () =>{
     showStart.classList.add("show");
     setTimeout(() => {
