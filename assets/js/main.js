@@ -1,5 +1,6 @@
 // Contenedor de los botones
 const panelBtn = document.getElementById("panel")
+const count = document.getElementById("count")
 const countMinuts = document.getElementById("minutos")
 const countSeconds = document.getElementById('segundos')
 const soundAlert = document.getElementById("sound")
@@ -139,6 +140,10 @@ panelBtn.addEventListener("click", (e) =>{
             break;
         // Detiene el cronometro hasta que se presione start de nuevo.
         case 'btn-stop':
+            count.classList.add("stopCount")
+            setTimeout(() => {
+                count.classList.remove("stopCount")
+            }, 3000)
             clearInterval(intervalCounter);
     }
 })
@@ -186,11 +191,3 @@ const alertSound = (filename) => {
     let embedSource = `<embed hidden="true" autostart="true" loop="false" src="assets/sounds/${filename}.mp3">`;
     soundAlert.innerHTML = '<audio autoplay="autoplay">' + mp3Source + oggSource + embedSource + '</audio>';
 }
-
-/*
-btnStart.addEventListener("click", () =>{
-    showStart.classList.add("show");
-    setTimeout(() => {
-        showStart.classList.remove("show")
-    }, 1000);
-})*/

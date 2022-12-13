@@ -101,6 +101,9 @@ button{
     width: 400px;
     background-color: rgba(0, 0, 0, 0.692);
 }
+.count.stopCount{
+    animation: stop 1.2s infinite;
+}
 .contain{
     display: flex;
     flex-direction: column;
@@ -243,6 +246,23 @@ footer{
     }
     100%{
         color: rgb(24, 14, 0);
+    }
+}
+@keyframes stop{
+    0%{
+        color: transparent;
+    }
+    25%{
+        color: #FECF67;
+    }
+    50%{
+        color: transparent;
+    }
+    75%{
+        color: #FECF67;
+    }
+    100%{
+        color: transparent;
     }
 }
 
